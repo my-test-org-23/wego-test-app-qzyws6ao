@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-551pbr
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-551pbr
+  namespace: my-nginx-551pbr
+  labels:
+    name: nginx-551pbr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-551pbr
+  template:
+    metadata:
+      namespace: my-nginx-551pbr
+      labels:
+        name: nginx-551pbr
+    spec:
+      containers:
+      - name: nginx-551pbr
+        image: nginx
+        ports:
+        - containerPort: 80
+
