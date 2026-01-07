@@ -14,7 +14,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: nginx-551pbr
+      name: nginx-551pbr23
   template:
     metadata:
       namespace: my-nginx-551pbr
